@@ -11,7 +11,7 @@ The Pet Adoption Hub is a comprehensive platform designed for viewing and managi
 3. [Features](#features)
 4. [Technologies Used](#technologies-used)
 5. [Contributions](#contributions)
-6. [License](#license)
+6. [Contact Information](#contact-information)
 
 ## Installation Instructions
 
@@ -50,9 +50,10 @@ Use the provided commands to navigate through the application effortlessly.
 
 ## Contributions
 
-Contributions are welcome! Follow our [Contribution Guidelines](CONTRIBUTING.md) for submitting pull requests and reporting issues.
+Contributions are welcome! Feel free to open a pull request or create an issue if you have any suggestions or improvements to propose.
 
-## License
 
-This project is licensed under the [MIT License](LICENSE.md).
+## Contact Information
+
+For inquiries or collaborations, feel free to contact connect on [LinkedIn](https://www.linkedin.com/in/wesley-sanchez/).
 
