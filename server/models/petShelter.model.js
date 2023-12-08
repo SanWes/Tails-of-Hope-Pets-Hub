@@ -26,9 +26,6 @@ const PetShelterSchema = new mongoose.Schema({
     },
     skill3: {
         type: String
-    },
-    likes: {
-        type: Number
     }
     
 })

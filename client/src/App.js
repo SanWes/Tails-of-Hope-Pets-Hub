@@ -15,13 +15,18 @@ function App() {
   return (
   <BrowserRouter>
     <div className="App container-xl">
-      <h1 className="m-2 p-2 float-left">Pet Shelter</h1>
 
+    <nav className="navbar navbar-container">
+
+     <Link style={{color: '#fff'}} to="/"> <h1 className="m-2 p-2 float-left">Pet Shelter</h1> </Link>
+
+ <Link className="m-2 p-2 btn btn-info" to="/pets/new" > add pet to the shelter </Link>
+
+    </nav>
 
       <Switch>
 
 <Route exact path="/">
- <Link className="m-2 p-2 btn btn-info float-right" to="/pets/new" > add pet to the shelter </Link>
   <AllPets   />
 </Route>
 

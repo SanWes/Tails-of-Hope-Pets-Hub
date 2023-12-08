@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const db_name = "mern_beltexam_db";
+require('dotenv').config();
+const db_name = process.env.db_name;
 
 //mongoose connection/config
 mongoose.connect(`mongodb+srv://root:root@mern.6etyz.mongodb.net/${db_name}?retryWrites=true&w=majority`, {
