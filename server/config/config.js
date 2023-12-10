@@ -1,24 +1,20 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const crypto = require('crypto');
-require('dotenv').config();
-const { SECRET, DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME, MONGODB_URI } = process.env;
-
-// console.log(MONGODB_URI, typeof MONGODB_URI);
+const { DB_LINK, DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME, MONGODB_URI } = process.env;
 
 mongoose.set('strictQuery', false);
+// console.log(MONGODB_URI, typeof MONGODB_URI);
+
+const urlDB = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?${DB_LINK}`;
+
 
 //mongoose connection/config
-mongoose.connect( MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect( urlDB, {useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("Connection to Database Success!"))
-    .catch(err => console.log( err));
+    .catch(err => console.log( err.message));
 
 
-
-
-
-    // mongoose.connect( uri, {useNewUrlParser: true, useUnifiedTopology: true })
-//     .then(() => console.log("Connection to Database Success!"))
-//     .catch(err => console.log( err));
 
 
 // Decrypting Scripts
@@ -44,3 +40,5 @@ function decrypt(encryptedData, inputIV) {
 // decrypted += decipher.final('utf-8');
 
 // const uri = decrypt(MONGODB_URI, iv);
+
+

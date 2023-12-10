@@ -1,0 +1,26 @@
+# railway.yml
+
+services:
+  backend:
+    commands:
+      - npx nixpacks build backend  # Use Nixpacks to build the backend
+      - npx nixpacks start backend  # Start the backend
+    env:
+      # Add backend environment variables here
+      NODE_ENV: production
+      MONGODB_URI: MONGODB_URI  # Replace with your MongoDB connection URI
+      PORT:8000
+    ports:
+      # Define backend ports to expose
+      - 8000:8000 
+
+frontend:
+    commands:
+      - npx nixpacks build frontend  # Use Nixpacks to build the frontend
+      - npx nixpacks start frontend  # Start the frontend
+    env:
+      # Add frontend environment variables here if needed
+      REACT_APP_API_URL: https://greedy-zephyr-production.up.railway.app  # Replace with your backend URL
+    # No ports specified for frontend as it typically runs on a different port and accessed through backend or separately
+  
+# Add other configurations as needed for databases, cron jobs, or other services

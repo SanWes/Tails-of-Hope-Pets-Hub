@@ -1,0 +1,38 @@
+# nixpacks.yml
+
+version: 1  # Nixpacks file version
+
+# Define builders for backend and frontend
+builders:
+  backend:
+    steps:
+      - name: Install backend dependencies
+        command: npm install
+        path: /  # Path to backend directory
+
+      - name: Start backend server
+        command: nodemon server.js
+        path: /  # Path to backend directory
+
+  frontend:
+    steps:
+      - name: Install frontend dependencies
+        path: /client # Path to frontend directory
+        command: npm install
+
+      - name: Build frontend
+        path: /client # Path to frontend directory
+        command: npm run build
+
+# Define services using the builders
+services:
+  backend:
+    build: backend  # Use the backend builder
+    port: 8000  # Expose the backend on port 8000
+
+  frontend:
+    build: frontend  # Use the frontend builder
+    port: 3000
+    env:
+      REACT_APP_API_URL: https://greedy-zephyr-production.up.railway.app  # Replace with your backend URL
+    # You may specify ports if necessary, otherwise, frontend typically runs on a different port and is accessed through the backend
