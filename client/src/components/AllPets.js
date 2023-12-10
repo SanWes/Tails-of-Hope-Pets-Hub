@@ -12,7 +12,7 @@ const AllPets = () => {
 
 
     useEffect( () => {
-        axios.get("http://server-pet-store.up.railway.app/api/pets")
+        axios.get("https://server-pet-store.up.railway.app/api/pets")
         .then(res=> {
             console.log("****** res is this", res);
             setAllPets(res.data.results)

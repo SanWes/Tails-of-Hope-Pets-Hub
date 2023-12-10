@@ -35,7 +35,7 @@ const NewPetForm = () => {
         e.preventDefault();
         console.log("submitted with this info -->", formInfo);
 
-        axios.post("http://server-pet-store.up.railway.app/api/pets", formInfo)
+        axios.post("https://server-pet-store.up.railway.app/api/pets", formInfo)
 
             .then(res=>{
                     console.log("response after successful axios post resquest-->", res);

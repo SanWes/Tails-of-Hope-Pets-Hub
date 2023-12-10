@@ -17,5 +17,5 @@ module.exports = app => {
 
     //DELETE Pet
     app.delete("/api/pets/delete/:petId", PetController.deletePet);
-   
+
 }

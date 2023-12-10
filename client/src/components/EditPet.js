@@ -17,7 +17,7 @@ const EditPet = () => {
 
 
     useEffect( () => {
-        axios.get(`http://server-pet-store.up.railway.app/api/pets/${petId}/`)
+        axios.get(`https://server-pet-store.up.railway.app/api/pets/${petId}/`)
         .then(res=> {
             console.log("****** Results are these", res);
             setOnePet(res.data.results)
@@ -30,7 +30,7 @@ const EditPet = () => {
     const changeHandler = (e) => {
         console.log("Changing something");
         console.log(e.target.name, e.target.value);
-         
+
             setOnePet({
                 ...onePet,
                 [ e.target.name]: e.target.value
@@ -44,7 +44,7 @@ const EditPet = () => {
         e.preventDefault()
         console.log("submitted with this info -->", onePet);
 
-        axios.put(`http://server-pet-store.up.railway.app/api/pets/update/${petId}`, onePet)
+        axios.put(`https://server-pet-store.up.railway.app/api/pets/update/${petId}`, onePet)
             .then(res=>{
                     console.log("response after successful axios put resquest-->", res);
                     
