@@ -13,7 +13,7 @@ const ShowOnePet = () => {
 
     
     useEffect( () => {
-        axios.get(`https://server-pet-store.up.railway.app/api/pets/${petId}/`)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/pets/${petId}/`)
         .then(res=> {
             console.log("****** res is this", res);
             setOnePet(res.data.results)
@@ -26,7 +26,7 @@ const ShowOnePet = () => {
     const deleteHandler = (e) => {
         // e.preventDefault()
 
-            axios.delete(`https://server-pet-store.up.railway.app/api/pets/delete/${petId}`)
+            axios.delete(`${process.env.REACT_APP_API_URL}/api/pets/delete/${petId}`)
             .then(res=>{
                     console.log("response after successful axios post resquest-->", res);
                     history.push("/");

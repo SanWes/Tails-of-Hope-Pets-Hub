@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-
 import { Link } from "react-router-dom";
+
 
 
 
@@ -12,7 +12,7 @@ const AllPets = () => {
 
 
     useEffect( () => {
-        axios.get("https://server-pet-store.up.railway.app/api/pets")
+        axios.get(`${process.env.REACT_APP_API_URL}/api/pets`)
         .then(res=> {
             console.log("****** res is this", res);
             setAllPets(res.data.results)
