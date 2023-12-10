@@ -34,5 +34,5 @@ services:
     build: frontend  # Use the frontend builder
     port: 3000
     env:
-      REACT_APP_API_URL: https://greedy-zephyr-production.up.railway.app  # Replace with your backend URL
+      REACT_APP_API_URL: https://server-pet-store.up.railway.app  # Replace with your backend URL
     # You may specify ports if necessary, otherwise, frontend typically runs on a different port and is accessed through the backend

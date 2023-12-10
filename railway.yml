@@ -20,7 +20,7 @@ frontend:
       - npx nixpacks start frontend  # Start the frontend
     env:
       # Add frontend environment variables here if needed
-      REACT_APP_API_URL: https://greedy-zephyr-production.up.railway.app  # Replace with your backend URL
+      REACT_APP_API_URL: https://server-pet-store.up.railway.app  # Replace with your backend URL
     # No ports specified for frontend as it typically runs on a different port and accessed through backend or separately
   
 # Add other configurations as needed for databases, cron jobs, or other services
